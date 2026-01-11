@@ -8,21 +8,21 @@ import lombok.ToString;
 
 import java.time.LocalDateTime;
 
-@Setter
-@Getter
-@ToString
 @MappedSuperclass
+@Getter
+@Setter
+@ToString
 public class BaseEntity {
-    @Column(updatable = false)
- private LocalDateTime createdAt;
-    @Column(insertable = false)
 
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @Column(updatable = false)
+    private String createdBy;
+
+    @Column(insertable = false)
     private LocalDateTime updatedAt;
+
     @Column(insertable = false)
-    private String createdABy;
-    @Column(updatable = false)
-
     private String updatedBy;
-
-
 }
